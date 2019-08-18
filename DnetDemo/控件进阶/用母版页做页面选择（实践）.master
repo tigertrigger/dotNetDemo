@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="用母版页做页面选择（实践）.master.cs" Inherits="控件进阶_母版页2_实践_" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        div.models {
+            padding: 10px;
+            border: 1px solid silver;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>页面的隐藏</div>
+        <div>
+            <div id="div_nav" class="models" runat="server">导航</div>
+            <div id="div_img" class="models" runat="server">图片</div>
+            <div id="div_news" class="models" runat="server">新闻</div>
+            <div id="div_prod" class="models" runat="server">产品列表</div>
+            <div id="div_sub" class="models" runat="server">
+                <asp:ContentPlaceHolder ID="CPH_main" runat="server">
+
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="div_foot" class="models" runat="server">页脚</div>
+        </div>
+    </form>
+</body>
+</html>

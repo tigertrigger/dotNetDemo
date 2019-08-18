@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMST_6.master.cs" Inherits="控件进阶_构建WEB框架实例1_AMST_6" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="CSS_DEFAULT.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <p>"C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config\machine.config"的284行会和修改sitemap的config代码冲突，现在已经注释</p>
+        </div>
+        <div id="main">
+            <div id="div_head" class="p1">
+                <h2>架构示例</h2>
+            </div>
+            <div id="div_nav" class="p1">
+                <div>
+                    <p>sitemap文件修改要去web.config</p>
+                    <p>
+                        Menu的MaximumDynamicDisplayLevels：属性表示在动态（鼠标放上去）显示存在下级的下级层数
+                        StaticDisplayLevels：静态显示导航的下级最大层数
+                        Orientation：横竖
+                    </p>
+                </div>
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" MaximumDynamicDisplayLevels="0" StaticDisplayLevels="2"></asp:Menu>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" SiteMapProvider="Web" />
+            </div>
+            <div id="div_img" class="p1">
+                <asp:ContentPlaceHolder ID="CPH_IMG" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="div_sitepath" class="p1">
+                <p>
+                    SiteMapPath控件 CurrentNodeStyle属性里可以设置当前选择的导航Class
+                </p>
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" SiteMapProvider="Web">
+                    <CurrentNodeStyle CssClass="now" />
+                </asp:SiteMapPath>
+            </div>
+            <div id="div_subContent" class="p1">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="div_foot" class="p1">
+                <p>页脚</p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

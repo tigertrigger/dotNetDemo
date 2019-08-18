@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="11-3 MasterPage母板页（1）.master.cs" Inherits="控件进阶_11_3_MasterPage母板页_1_" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="CSS_forMaster.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <p>容器上方</p>
+            <asp:TextBox ID="txt_result" runat="server"></asp:TextBox>
+            <asp:Button ID="btn_mst" runat="server" Text="Master" OnClick="btn_mst_Click" />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <p>容器下方</p>
+            <p>第二个容器</p>
+            <asp:ContentPlaceHolder ID="myCPH" runat="server">
+            </asp:ContentPlaceHolder>
+            <p>第二个容器尾巴</p>
+        </div>
+    </form>
+</body>
+</html>

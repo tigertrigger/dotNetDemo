@@ -1,0 +1,112 @@
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+
+public partial class 控件进阶与AJAX_TreeView控件_example : System.Web.UI.Page
+{
+
+    string mycon = " Database=ceshi;Data Source=localhost;User=root;PWD=123123 ";
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            maketree();
+        }
+    }
+
+    protected void maketree()
+    {
+        TreeNode _tNode, _parentNode;
+        DataTable province = bind(" select * from `hjmall_district1` where `level`='p' ");
+        foreach (DataRow row in province.Rows)
+        {
+            _tNode = new TreeNode();
+            _tNode.Text = row["name"].ToString();
+            _tNode.Value = "p_" + row["id"].ToString();
+            TreeView1.Nodes.Add(_tNode);
+        }
+        DataTable city = bind(" select * from `hjmall_district1` where `level`='c' ");
+        foreach (DataRow row1 in city.Rows)
+        {
+            _parentNode = TreeView1.FindNode("p_" + row1["parent_id"].ToString());
+            _tNode = new TreeNode();
+            _tNode.Text = row1["name"].ToString();
+            _tNode.Value = "c_" + row1["id"].ToString();
+            _parentNode.ChildNodes.Add(_tNode);
+        }
+        DataTable district = bind(" select t1.`id`,t1.`name`,t1.`parent_id` as `p_id`,t2.`parent_id` as `pp_id` from `hjmall_district1` t1 left join " +
+            " `hjmall_district1` t2 on t1.`parent_id`=t2.`id` " +
+            " where t1.`level`='d' ");
+        foreach (DataRow row2 in district.Rows)
+        {
+            _parentNode = TreeView1.FindNode("p_" + row2["pp_id"].ToString()+"/c_"+ row2["p_id"].ToString());
+            _tNode = new TreeNode();
+            _tNode.Text = row2["name"].ToString();
+            _tNode.Value = "d_" + row2["id"].ToString();
+            _parentNode.ChildNodes.Add(_tNode);
+        }
+    }
+
+    public DataTable bind(string command)
+    {
+        DataTable table = new DataTable();
+        MySqlConnection mysql = new MySqlConnection(mycon);
+        MySqlCommand mycom = new MySqlCommand(command, mysql);
+        MySqlDataAdapter datar = null;
+        using (mysql)
+        {
+            try
+            {
+                mysql.Open();
+                datar = new MySqlDataAdapter(command, mycon);
+                datar.Fill(table);
+            }
+            catch(Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                mysql.Close();
+            }
+        }
+        return table;
+    }
+
+    public int ExeNonQuery(string command)
+    {
+        string mycon = " Database=ceshi;Data Source=localhost;User=root;PWD=123123 ";
+        MySqlConnection mysql = new MySqlConnection(mycon);
+        MySqlCommand mycom = new MySqlCommand(command, mysql);
+        using (mysql)
+        {
+            try
+            {
+                mysql.Open();
+                return mycom.ExecuteNonQuery();
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+                mysql.Close();
+            }
+        }
+    }
+
+    protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
+    {
+        TreeNode _tnode = TreeView1.SelectedNode;
+        lbl_text.Text = _tnode.Text;
+        lbl_value.Text = _tnode.Value;
+        lbl_valuePath.Text = _tnode.ValuePath;
+    }
+}

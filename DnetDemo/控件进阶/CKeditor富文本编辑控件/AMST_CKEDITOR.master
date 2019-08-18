@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMST_CKEDITOR.master.cs" Inherits="_7_CKEDITOR_AMST_CKEDITOR" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../CSS/CSS_8_CKEDITOR.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="div_main">
+    <h1>CKEDITOR</h1>
+
+    <div id="div_menu">
+        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+            <Items>
+                <asp:MenuItem Text="简单应用" Value="新建项" 
+                    NavigateUrl="~/控件进阶/CKeditor富文本编辑控件/8_1_Simple.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="工具栏设置" Value="新建项" 
+                    NavigateUrl="~/控件进阶/CKeditor富文本编辑控件/8_2_ToolbarMode.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="皮肤&颜色设置" Value="新建项" 
+                    NavigateUrl="~/控件进阶/CKeditor富文本编辑控件/8_3_Skin.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="CSS应用" Value="新建项" 
+                    NavigateUrl="~/控件进阶/CKeditor富文本编辑控件/8_4_CSS.aspx"></asp:MenuItem>
+
+            </Items>
+        </asp:Menu>
+    </div>
+    
+
+   <div id="div_content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </div>
+    </form>
+</body>
+</html>

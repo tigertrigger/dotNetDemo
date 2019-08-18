@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="A_MasterPage.master.cs" Inherits="A_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="jquery-1.7.2/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#div_right div").mouseover(function (){
+                $("a", this).show();
+            })
+
+            $("#div_right div").mouseout(function () {
+                $("a", this).hide();
+            });
+        });
+    </script>
+    <style type="text/css">
+        body{width:750px;margin:0px auto;}
+        h2{text-align:center ;border-bottom:1px dotted silver; padding-bottom: 10px;}
+        .clr{clear:both;}
+        #div_head {height: 40px;}
+        #div_left{float:left;}
+        #div_right{float:right;width:300px}
+        #div_right div{padding:10px 0px 10px 0px;border-bottom:1px dotted silver;}
+        #div_right div a{display:block;float:right;padding:3px;border:1px solid black;
+                         font-size:12px;text-decoration:none;margin-left:5px;display:none;
+        }
+        #div_right div a:hover{
+            color:#850000;
+        }
+        #div_foot{height:30px;background-color:#808080;border:1px solid gray;}
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div id="div_head">
+                <h2>简易文本阅读编辑</h2>
+            </div>
+            <div id="div_main">
+                <div id="div_left">
+                    <asp:ContentPlaceHolder ID="holder_main" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <div id="div_right" runat="server">放菜单</div>
+                <div class="clr"></div>
+            </div>
+            <div id="div_foot"></div>
+
+
+        </div>
+    </form>
+</body>
+</html>

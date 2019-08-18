@@ -1,0 +1,71 @@
+﻿body, div, p, h1, h2, h3, h4, h5, h6, img, a {
+    margin: 0px;
+    padding: 0px
+}
+
+#main {
+    width: 710px;
+    margin: 0px auto;
+}
+
+div.p1 {
+    padding: 4px;
+    border: 1px solid #dedede;
+    margin-bottom: 10px;
+}
+#div_head, #div_nav, #div_sitepath {
+    border: none;
+}
+#div_nav{
+    background-color:#35a;
+}
+#div_sitepath{
+    background-color:#dedede;
+}
+#div_subContent{
+    min-height:300px;
+}
+#div_foot{
+    background-color:#dedede;
+}
+
+/*隐藏点击时，判断区域的外边框*/
+    #Menu1 * {
+        outline: none;
+    }
+
+    #Menu1 ul {
+        padding: 10px 0px 10px 0px !important;
+    }
+
+    #Menu1 li {
+        padding: 5px 10px 5px 10px;
+    }
+
+        #Menu1 li + li {
+            border-left: 1px solid #dadada;
+        }
+
+    #Menu1 a {
+        font-size: 12px;
+        color: silver;
+    }
+        #Menu1 a.selected {
+            color: white;
+        }
+
+        #Menu1 a:hover {
+            color: white;
+        }
+
+#SiteMapPath1 a
+{
+    text-decoration:none; font-size:12px;color:#444;
+}
+
+#SiteMapPath1 a:hover{
+    color:#35a;
+}
+#SiteMapPath1 span.now{
+    font-size:13px;color:#444;
+}

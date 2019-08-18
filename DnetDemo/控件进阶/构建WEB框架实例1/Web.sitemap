@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/控件进阶/构建WEB框架实例1/default.aspx" title="首页"  description="">
+    <siteMapNode url="~/控件进阶/构建WEB框架实例1/intro.aspx" title="公司简介"  description="" />
+    <siteMapNode url="~/控件进阶/构建WEB框架实例1/news.aspx" title="新闻"  description="">
+      <siteMapNode url="~/控件进阶/构建WEB框架实例1/newsDetail.aspx" title="[新闻标题]" />
+    </siteMapNode>
+    <siteMapNode url="~/控件进阶/构建WEB框架实例1/prod.aspx" title="产品中心"  description="">
+      <siteMapNode url="~/控件进阶/构建WEB框架实例1/prodDetail.aspx" title="[产品名称]"/>
+    </siteMapNode>
+    <siteMapNode url="~/控件进阶/构建WEB框架实例1/service.aspx" title="支持服务"  description="" />
+    <siteMapNode url="~/控件进阶/构建WEB框架实例1/contact.aspx" title="联系我们"  description="" />
+  </siteMapNode>
+</siteMap>

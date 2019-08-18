@@ -1,0 +1,5 @@
+-------2019年5月12日20:17:06
+安装了mysql-for-visualstudio-1.2.8.msi；
+mysql-connector-net-8.0.12.msi；
+mysql-connector-odbc-8.0.12-winx64.msi；
+---------------------------------------
