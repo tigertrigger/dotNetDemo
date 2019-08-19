@@ -17,7 +17,25 @@
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             </asp:Panel>
             <hr />
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server"></asp:UpdatePanel>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <p><%=DateTime.Now.ToFileTime() %></p>
+                    <asp:Button ID="Button2" runat="server" Text="Button" />
+                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="Button1" />
+                </Triggers>
+            </asp:UpdatePanel>
+            
+            <hr />
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <p><%=DateTime.Now.ToFileTime() %></p>
+                    <asp:Button ID="Button3" runat="server" Text="Button" OnClick="Button3_Click" />
+                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
     </form>
 </body>

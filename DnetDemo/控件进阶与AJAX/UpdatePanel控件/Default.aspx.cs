@@ -11,4 +11,9 @@ public partial class 控件进阶与AJAX_UpdatePanel控件_Default : System.Web.
     {
 
     }
+
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        UpdatePanel1.Update();
+    }
 }

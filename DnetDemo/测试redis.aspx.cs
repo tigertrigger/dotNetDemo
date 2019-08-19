@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ServiceStack.Redis;
-using ServiceStack.Redis;
 using System.Data;
 using System.Threading;
 

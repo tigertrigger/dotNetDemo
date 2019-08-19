@@ -2,6 +2,7 @@
 
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <CKEditor:CKEditorControl ID="CKEditorControl1" runat="server"
+            <CKEditor:CKEditorControl ID="CKEditorControl1" runat="server" 
                 Toolbar="Basic"></CKEditor:CKEditorControl>
             <asp:Button ID="Button1" runat="server" Text="读取文本" OnClick="Button1_Click" />
             <asp:Button ID="Button2" runat="server" Text="读取富文本" OnClick="Button2_Click" />

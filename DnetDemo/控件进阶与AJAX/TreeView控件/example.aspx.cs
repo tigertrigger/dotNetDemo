@@ -16,14 +16,49 @@ public partial class 控件进阶与AJAX_TreeView控件_example : System.Web.UI.
     {
         if (!IsPostBack)
         {
-            maketree();
+            try
+            {
+                maketree();
+            }
+            catch
+            {
+                NonMaketree();
+            }
         }
     }
+    protected void NonMaketree()
+    {
+        TreeNode _tNode, _parentNode;
+        _tNode = new TreeNode();
+        _tNode.Text = "湖南";
+        _tNode.Value = "p_1";
+        TreeView1.Nodes.Add(_tNode);
+
+        //子级2
+        _parentNode = TreeView1.FindNode("p_1");
+        _tNode = new TreeNode();
+        _tNode.Text = "长沙";
+        _tNode.Value = "c_2";
+        _parentNode.ChildNodes.Add(_tNode);
+
+        //子级3
+        _parentNode = TreeView1.FindNode("p_1/c_2");
+        _tNode = new TreeNode();
+        _tNode.Text = "岳麓区";
+        _tNode.Value = "d_3";
+        _parentNode.ChildNodes.Add(_tNode);
+    }
+
+
 
     protected void maketree()
     {
         TreeNode _tNode, _parentNode;
         DataTable province = bind(" select * from `hjmall_district1` where `level`='p' ");
+        if(province == null|| province.Rows.Count<=0)
+        {
+            throw new Exception();
+        }
         foreach (DataRow row in province.Rows)
         {
             _tNode = new TreeNode();
