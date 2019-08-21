@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<texts>
+  <text name="雨花区" id="111"></text>
+  <text name="岳麓区" id="222"></text>
+  <text name="雁峰区" id="333"></text>
+  <text name="蒸湘区" id="444"></text>
+  <text name="武昌区" id="555"></text>
+  <text name="江汉区" id="666"></text>
+  <text name="铁山区" id="777"></text>
+  <text name="下陆区" id="888"></text>
+  <text name="朝阳区" id="999"></text>
+  <text name="西城区" id="1000"></text>
+</texts>

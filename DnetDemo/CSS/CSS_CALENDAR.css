@@ -1,0 +1,9 @@
+﻿.MyCalendar /* 对日历控件的简单CSS定义 */
+{ padding:9px; 
+  border:2px solid #930;
+  background-color:#CAEEA0;  }
+
+
+/* 定义日历控件中 显示“今天日期”的样式 */
+.MyCalendar .ajax__calendar_today 
+{ font-size:14px; color:Brown;}

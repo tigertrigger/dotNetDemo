@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Texts>
+
+  <Text Name="湖南省" Id="1" />
+
+  <Text Name="湖北省" Id="2" />
+
+  <Text Name="北京" Id="3" />
+
+</Texts>

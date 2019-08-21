@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<texts>
+  <text name="长沙市" id="11" p_id="1"></text>
+  <text name="衡阳市" id="22" p_id="1"></text>
+  <text name="武汉市" id="33" p_id="2"></text>
+  <text name="黄石市" id="44" p_id="3"></text>
+  <text name="北京市" id="55" p_id="3"></text>
+</texts>

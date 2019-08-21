@@ -6,10 +6,12 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Button ID="Button4" runat="server" Text="Button" />
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:Panel ID="Panel1" runat="server">
                 <p><%=DateTime.Now.ToFileTime() %></p>
@@ -27,13 +29,20 @@
                     <asp:AsyncPostBackTrigger ControlID="Button1" />
                 </Triggers>
             </asp:UpdatePanel>
-            
+
             <hr />
             <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <p><%=DateTime.Now.ToFileTime() %></p>
                     <asp:Button ID="Button3" runat="server" Text="Button" OnClick="Button3_Click" />
                     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <hr />
+            <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <p><%=DateTime.Now.ToFileTime() %></p>
+                    <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>

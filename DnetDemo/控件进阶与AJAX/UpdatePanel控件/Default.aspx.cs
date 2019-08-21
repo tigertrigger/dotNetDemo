@@ -16,4 +16,11 @@ public partial class 控件进阶与AJAX_UpdatePanel控件_Default : System.Web.
     {
         UpdatePanel1.Update();
     }
+
+    protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+    {
+        string _sDate = Calendar1.SelectedDate.ToLongDateString();
+        string _script = "$('#TextBox1').val('"+_sDate+"')";
+        ScriptManager.RegisterStartupScript(this, this.GetType(),"oneDream", _script, true);
+    }
 }

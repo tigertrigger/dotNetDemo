@@ -1,0 +1,28 @@
+﻿* { outline:none;}
+
+#tbl_sliders
+{ border-collapse:collapse;}
+#tbl_sliders td
+{ padding:5px;
+   }
+#tbl_sliders td.tdValue
+{ width:40px;}
+
+
+
+.myHandle
+    { width:20px; height:20px;}
+.myHandle:hover
+    { cursor:w-resize;}
+
+.rail_r,.rail_g,.rail_b
+    { background-repeat:no-repeat;
+      position:relative;
+      width:250px; 
+      height:20px;    }
+
+.rail_r { background-image:url(../IMG/rail_r.png);}
+.rail_g { background-image:url(../IMG/rail_g.png);}
+.rail_b { background-image:url(../IMG/rail_b.png);}
+
+
