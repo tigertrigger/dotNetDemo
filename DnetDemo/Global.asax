@@ -18,7 +18,7 @@
     {
         // 在出现未处理的错误时运行的代码
         Exception exception = Server.GetLastError();
-        Response.Redirect("~/Default.aspx");
+        Response.Write(123);
     }
 
     void Session_Start(object sender, EventArgs e)
