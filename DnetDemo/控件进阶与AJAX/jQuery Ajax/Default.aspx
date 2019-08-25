@@ -12,11 +12,16 @@
             $("#Button1").click(function () {
                 $("#div_content").load("../UpdatePanel控件/Default.aspx #UpdatePanel3", xianshi());
             });
+            function xianshi() {
+                //各种方法功能包括后面的hide().fadeIn()可以写到这里来;
+            }
+            $("#div_content").ajaxStart(function () {
+                $(this).html("正在加载");
+            });
+            $("#div_content").ajaxComplete(function () {
+                $(this).hide().fadeIn(600);
+            });
         });
-        function xianshi() {
-            //各种方法功能包括后面的hide().fadeIn()可以写到这里来;
-        }
-
         //文本乱码改格式用
         //$.ajaxSetup({
         //    'beforeSend': function (xhr) {
