@@ -140,6 +140,8 @@ public partial class 控件进阶与AJAX_TreeView控件_example : System.Web.UI.
     protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
     {
         TreeNode _tnode = TreeView1.SelectedNode;
+
+
         lbl_text.Text = _tnode.Text;
         lbl_value.Text = _tnode.Value;
         lbl_valuePath.Text = _tnode.ValuePath;
