@@ -1,9 +1,6 @@
 ﻿CREATE TABLE [dbo].[t_memberDetail](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[user_id] [int] NULL,
-	[hp] [nvarchar](50) NULL,
-	[datetime] [datetime] NULL CONSTRAINT [DF_t_memberDetail_datetime]  DEFAULT (getdate()),
-	[timesFlag] [timestamp] NOT NULL,
  CONSTRAINT [PK_t_memberDetail] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC

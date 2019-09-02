@@ -122,9 +122,9 @@
     <None Include="Datas\memMaterial.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="myDemo.publish.xml" />
+    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
+    <None Include="myDemo.publish.xml" />
   </ItemGroup>
 </Project>
