@@ -10,29 +10,50 @@ using System.Web.UI.WebControls;
 
 public partial class 控件进阶与AJAX_Slider扩展综合实例_Default : System.Web.UI.Page
 {
-    string connStr= ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+    public string myconStr = System.Configuration.ConfigurationManager.ConnectionStrings["ceshiSQL"].ToString();
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
-    }
-
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        DataSet ds = new DataSet();
-        using (SqlConnection cn = new SqlConnection())
+        if(!IsPostBack)
         {
-            //VS2012 自带的SQL为 localdb,连接字符串有一点点不一样，其他功能都一样操作
-            cn.ConnectionString = connStr;
-            cn.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cn;
-            cmd.CommandText = "select * from ceshi";
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
+            maketree();
         }
-        Response.Write(ds.Tables[0].Rows[0]["name"].ToString());
     }
+    protected void maketree()
+    {
+        DataTable table = bind("select * from pm");
+        TreeNode _tnode;
+        foreach(DataRow row in table.Rows)
+        {
+            _tnode = new TreeNode();
+            _tnode.Text = row["date"].ToString();
+            _tnode.Value = row["id"].ToString();
+
+            tv_date.Nodes.Add(_tnode);      
+        }
+    }
+    public DataTable bind(string command)
+    {
+        DataTable table = new DataTable();
+        SqlConnection mycon = new SqlConnection(myconStr);
+        using (mycon)
+        {
+            try
+            {
+                SqlDataAdapter datar = new SqlDataAdapter(command, mycon);
+                datar.Fill(table);
+                datar.Dispose();
+            }
+            catch
+            {
+                Response.Write(123);
+            }
+            finally
+            {
+                mycon.Close();
+            }
+        }
+        return table;
+    }
+
 }

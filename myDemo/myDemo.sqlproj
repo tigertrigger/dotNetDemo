@@ -117,9 +117,10 @@
     <Build Include="dbo\Tables\t_madMaterial.sql" />
     <Build Include="dbo\Tables\t_memberDetail.sql" />
     <Build Include="dbo\Stored Procedures\sp_CreateUser.sql" />
-    <None Include="Datas\ScriptsIgnoredOnImport.sql" />
     <None Include="Datas\memberDetail.sql" />
     <None Include="Datas\memMaterial.sql" />
+    <Build Include="dbo\Tables\pm.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />

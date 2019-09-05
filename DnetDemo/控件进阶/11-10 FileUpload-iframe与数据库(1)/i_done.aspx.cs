@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+
+
 
 public partial class 控件进阶_11_10_FileUpload_iframe与数据库_1_iframe_upload : System.Web.UI.Page
 {
@@ -11,4 +15,5 @@ public partial class 控件进阶_11_10_FileUpload_iframe与数据库_1_iframe_u
     {
 
     }
+   
 }

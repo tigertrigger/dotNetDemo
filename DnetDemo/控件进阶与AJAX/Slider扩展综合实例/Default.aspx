@@ -21,7 +21,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
             <div id="div_nav" class="fl">
                 <asp:TreeView ID="tv_date" runat="server"></asp:TreeView>
             </div>
