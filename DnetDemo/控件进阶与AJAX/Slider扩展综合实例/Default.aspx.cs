@@ -21,13 +21,13 @@ public partial class 控件进阶与AJAX_Slider扩展综合实例_Default : Syst
     }
     protected void maketree()
     {
-        DataTable table = bind("select * from pm");
+        DataTable table = bind("select * from [pm]");
         TreeNode _tnode;
         foreach(DataRow row in table.Rows)
         {
             _tnode = new TreeNode();
-            _tnode.Text = row["date"].ToString();
-            _tnode.Value = row["id"].ToString();
+            _tnode.Text =string.Format("{0:D}",(DateTime)row["date"]);
+            _tnode.Value = row["val"].ToString();
 
             tv_date.Nodes.Add(_tnode);      
         }
@@ -54,6 +54,12 @@ public partial class 控件进阶与AJAX_Slider扩展综合实例_Default : Syst
             }
         }
         return table;
+    }
+
+
+    protected void tv_date_SelectedNodeChanged(object sender, EventArgs e)
+    {
+        TextBox1.Text = tv_date.SelectedValue;
     }
 
 }

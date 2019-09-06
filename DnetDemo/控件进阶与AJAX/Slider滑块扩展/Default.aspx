@@ -35,7 +35,6 @@
         <div>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-
             <ajaxToolkit:SliderExtender
                 ID="TextBox1_SliderExtender"
                 runat="server"

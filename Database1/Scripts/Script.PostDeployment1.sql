@@ -9,4 +9,4 @@
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-:r .\ScriptsIgnoredOnImport.sql
+:r ..\Datas\data.sql
