@@ -22,7 +22,7 @@
         .myHandle {
             width: 10px;
             height: 20px;
-            margin-top:3px;
+            margin-top: 3px;
         }
 
         .myRail {
@@ -50,7 +50,21 @@
                     BehaviorID="TextBox1_SliderExtender"
                     Maximum="500" Minimum="0"
                     TargetControlID="TextBox1" HandleCssClass="myHandle" HandleImageUrl="~/image/handle_pm.png" RailCssClass="myRail" />
+
+                <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1"
+                    ItemPlaceholderID="itemHolder">
+                    <LayoutTemplate>
+                        <div id="itemHolder" runat="server"></div>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <h3><%#Eval("date","{0:D}") %></h3>
+                        <asp:TextBox ID="TextBox2" runat="server"
+                            Text='<%#Eval("val") %>'/><br />
+                    </ItemTemplate>
+                </asp:ListView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ceshiSQL %>" SelectCommand="SELECT * FROM [pm]"></asp:SqlDataSource>
             </div>
+
             <div class="clr"></div>
         </div>
     </form>

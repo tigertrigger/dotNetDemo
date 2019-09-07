@@ -1,7 +1,4 @@
 ﻿
-USE [ceshi]
-GO
-
 SET IDENTITY_INSERT [dbo].[t_madMaterial] ON
 GO
 
