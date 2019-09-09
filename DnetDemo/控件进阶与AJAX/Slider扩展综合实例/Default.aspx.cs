@@ -14,7 +14,7 @@ public partial class 控件进阶与AJAX_Slider扩展综合实例_Default : Syst
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(!IsPostBack)
+        if (!IsPostBack)
         {
             maketree();
         }
@@ -23,13 +23,13 @@ public partial class 控件进阶与AJAX_Slider扩展综合实例_Default : Syst
     {
         DataTable table = bind("select * from [pm]");
         TreeNode _tnode;
-        foreach(DataRow row in table.Rows)
+        foreach (DataRow row in table.Rows)
         {
             _tnode = new TreeNode();
-            _tnode.Text =string.Format("{0:D}",(DateTime)row["date"]);
-            _tnode.Value = row["val"].ToString();
-
-            tv_date.Nodes.Add(_tnode);      
+            _tnode.Text = string.Format("{0:D}", (DateTime)row["date"]);
+            //_tnode.Value = row["val"].ToString();
+            _tnode.Value = row["id"].ToString();
+            tv_date.Nodes.Add(_tnode);
         }
     }
     public DataTable bind(string command)
@@ -59,7 +59,21 @@ public partial class 控件进阶与AJAX_Slider扩展综合实例_Default : Syst
 
     protected void tv_date_SelectedNodeChanged(object sender, EventArgs e)
     {
-        TextBox1.Text = tv_date.SelectedValue;
+        //TextBox1.Text = tv_date.SelectedValue;
+    }
+
+
+    protected void btn_showList_Click(object sender, EventArgs e)
+    {
+        string _values = "";
+        foreach (TreeNode _node in tv_date.CheckedNodes)
+        {
+            _values += ","+_node.Value;
+        }
+        _values = _values.Substring(1);
+        TextBox1.Text = _values;
+        string _sql = "select * from pm where id in (" + _values + ")";
+        SqlDataSource1.SelectCommand = _sql;
     }
 
 }
