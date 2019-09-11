@@ -87,6 +87,7 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.config
 
 # Chutzpah Test files
 _Chutzpah*
@@ -338,5 +339,3 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-
-Web.config
