@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="popup.aspx.cs" Inherits="控件进阶与AJAX_弹出层扩展_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="弹出层demo.aspx.cs" Inherits="控件进阶与AJAX_弹出层扩展_Default" %>
 
 <!DOCTYPE html>
 

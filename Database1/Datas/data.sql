@@ -61,3 +61,14 @@ GO
 
 INSERT [dbo].[pm] ([id], [date], [val]) VALUES (10, CAST(N'2019-09-10' AS Date), 211)
 GO
+
+SET IDENTITY_INSERT [dbo].[t_company] ON 
+
+INSERT [dbo].[t_company] ([id], [name]) VALUES (1, N'广州星光皮革有限公司')
+INSERT [dbo].[t_company] ([id], [name]) VALUES (2, N'深圳龙八棒有限公司')
+INSERT [dbo].[t_company] ([id], [name]) VALUES (3, N'长沙烟卷厂')
+INSERT [dbo].[t_company] ([id], [name]) VALUES (4, N'北京斯卡蒂电子有限公司')
+INSERT [dbo].[t_company] ([id], [name]) VALUES (5, N'上海周先生有限公司')
+INSERT [dbo].[t_company] ([id], [name]) VALUES (6, N'杭州孙先生有限公司')
+INSERT [dbo].[t_company] ([id], [name]) VALUES (7, N'自贡黄先生有限公司')
+SET IDENTITY_INSERT [dbo].[t_company] OFF
