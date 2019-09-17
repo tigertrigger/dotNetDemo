@@ -27,6 +27,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DnetDemo", "DnetDemo\", "{B
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database1", "Database1\Database1.sqlproj", "{17CA0E84-80B4-4559-9ED9-DE0DAF151439}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{CEEFD7E6-655E-4998-B817-8A25ACC5A95D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{17CA0E84-80B4-4559-9ED9-DE0DAF151439}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17CA0E84-80B4-4559-9ED9-DE0DAF151439}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17CA0E84-80B4-4559-9ED9-DE0DAF151439}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CEEFD7E6-655E-4998-B817-8A25ACC5A95D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEFD7E6-655E-4998-B817-8A25ACC5A95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEFD7E6-655E-4998-B817-8A25ACC5A95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEEFD7E6-655E-4998-B817-8A25ACC5A95D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
